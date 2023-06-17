@@ -1,5 +1,4 @@
-from image_preprocessing.preprocess_from_folders import create_labels, extract_images
+from ml_workflow.preprocess_from_folders import create_labels, extract_images, augment_image_data
+from ml_workflow.train_artificial_neural_network import train
 
-labels = create_labels()
-images = extract_images()
-print(images)
+model = train()

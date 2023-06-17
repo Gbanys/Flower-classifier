@@ -1,4 +1,4 @@
-from ml_workflow.preprocess_from_folders import create_labels, extract_images
+from ml_workflow.preprocess_from_folders import create_labels, extract_images, augment_image_data
 from sklearn.model_selection import train_test_split
 from tensorflow import keras
 
@@ -28,6 +28,7 @@ def train():
 
     labels = create_labels()
     images = extract_images()
+    images, labels = augment_image_data(images, labels)
     ml_data = train_test_validation_split(images, labels)
 
     model = keras.models.Sequential([
